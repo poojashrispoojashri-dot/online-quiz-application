@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuizVerse | Quiz Competition</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a class="brand" href="#">
+            <span class="brand-icon">Q</span>
+            <span>QUIZ<span class="accent">VERSE</span>
+                <small>ULTIMATE QUIZ ARENA</small>
+            </span>
+        </a>
+
+        <div class="top-actions">
+            <span class="live-dot"></span>
+            QUIZ ARENA
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-copy">
+
+                <div class="eyebrow">
+                    ✦ THE NEXT GENERATION QUIZ PLATFORM
+                </div>
+
+                <h1>
+                    Challenge your mind.
+                    <span>Own the arena.</span>
+                </h1>
+
+                <p>
+                    Test your knowledge, beat the clock,
+                    and climb the leaderboard.
+                    Your next high score starts here.
+                </p>
+
+                <button class="btn" id="exploreBtn">
+                    Explore Quizzes ↗
+                </button>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>06</strong>
+                        <span>QUIZ CATEGORIES</span>
+                    </div>
+
+                    <div>
+                        <strong>10</strong>
+                        <span>QUESTIONS / ROUND</span>
+                    </div>
+
+                    <div>
+                        <strong>15s</strong>
+                        <span>PER QUESTION</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero-art">
+                <div class="orbit"></div>
+
+                <div class="quiz-cube">
+                    <span>?</span>
+                </div>
+
+                <div class="floating-tag">
+                    ✦ KNOWLEDGE IS POWER
+                </div>
+            </div>
+
+        </section>
+
+        <!-- QUIZ CATEGORIES -->
+
+        <section class="section" id="categories">
+
+            <div class="section-heading">
+                <div class="eyebrow">CHOOSE YOUR BATTLE</div>
+
+                <h2>Find your <span>challenge.</span></h2>
+
+                <p>
+                    Pick a category and test your knowledge.
+                </p>
+            </div>
+
+            <div class="category-grid">
+
+                <button class="category-card purple"
+                    data-category="Technology">
+
+                    <span class="category-icon">💻</span>
+                    <strong>Tech & Coding</strong>
+                    <small>HTML, CSS, JavaScript</small>
+                    <span class="card-bottom">START CHALLENGE ↗</span>
+
+                </button>
+
+                <button class="category-card blue"
+                    data-category="General Knowledge">
+
+                    <span class="category-icon">🌍</span>
+                    <strong>General Knowledge</strong>
+                    <small>World and current facts</small>
+                    <span class="card-bottom">START CHALLENGE ↗</span>
+
+                </button>
+
+                <button class="category-card pink"
+                    data-category="Science">
+
+                    <span class="category-icon">🔬</span>
+                    <strong>Science</strong>
+                    <small>Discover how things work</small>
+                    <span class="card-bottom">START CHALLENGE ↗</span>
+
+                </button>
+
+                <button class="category-card orange"
+                    data-category="Mathematics">
+
+                    <span class="category-icon">🧮</span>
+                    <strong>Mathematics</strong>
+                    <small>Numbers and calculations</small>
+                    <span class="card-bottom">START CHALLENGE ↗</span>
+
+                </button>
+
+                <button class="category-card green"
+                    data-category="Sports">
+
+                    <span class="category-icon">🏆</span>
+                    <strong>Sports</strong>
+                    <small>Games and champions</small>
+                    <span class="card-bottom">START CHALLENGE ↗</span>
+
+                </button>
+
+                <button class="category-card cyan"
+                    data-category="Reasoning">
+
+                    <span class="category-icon">🧠</span>
+                    <strong>Logical Reasoning</strong>
+                    <small>Logic and problem solving</small>
+                    <span class="card-bottom">START CHALLENGE ↗</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- COMPETITION SETUP -->
+
+        <section class="arena-panel" id="arena">
+
+            <div class="eyebrow">
+                THE COMPETITION STARTS NOW
+            </div>
+
+            <h2>Ready to enter the <span>arena?</span></h2>
+
+            <p id="arenaDescription">
+                Choose a category and difficulty.
+            </p>
+
+            <div class="difficulty-row">
+                <span>SELECT DIFFICULTY</span>
+
+                <div class="difficulty-options">
+
+                    <button class="difficulty active"
+                        data-level="Easy">Easy</button>
+
+                    <button class="difficulty"
+                        data-level="Medium">Medium</button>
+
+                    <button class="difficulty"
+                        data-level="Hard">Hard</button>
+
+                </div>
+            </div>
+
+            <label class="name-field">
+                PLAYER NAME
+
+                <input id="playerName"
+                    type="text"
+                    maxlength="20"
+                    placeholder="Enter your name"
+                    value="Player One">
+            </label>
+
+            <button class="btn start-btn" id="startBtn">
+                Start Competition →
+            </button>
+
+            <p class="rules-note">
+                10 Questions · 15 Seconds Each ·
+                Instant Results · Best Score Saved
+            </p>
+
+        </section>
+
+        <!-- LEADERBOARD -->
+
+        <section class="section" id="leaderboard">
+
+            <div class="eyebrow">THE ONES TO BEAT</div>
+
+            <h2>Your <span>Hall of Fame.</span></h2>
+
+            <p>Your best scores on this device.</p>
+
+            <div class="leaderboard-card">
+
+                <div class="leaderboard-head">
+                    <span>RANK / PLAYER</span>
+                    <span>CATEGORY</span>
+                    <span>SCORE</span>
+                    <span>ACCURACY</span>
+                </div>
+
+                <div id="leaderboardRows"></div>
+
+                <div id="emptyLeaderboard" class="empty-state">
+                    Play your first quiz to appear here!
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- QUIZ MODAL -->
+
+    <div class="modal-backdrop hidden" id="quizModal">
+
+        <div class="quiz-modal">
+
+            <div class="quiz-top">
+
+                <div>
+                    <div class="eyebrow">LIVE CHALLENGE</div>
+                    <h2>Quiz <span>Arena</span></h2>
+                </div>
+
+                <button class="icon-close" id="closeQuiz">×</button>
+
+            </div>
+
+            <div class="quiz-meta">
+                <span id="quizCategory"></span>
+                <span id="questionCounter"></span>
+            </div>
+
+            <div class="timer-line">
+                <div id="timerBar"></div>
+            </div>
+
+            <div class="question-row">
+
+                <h3 id="questionText">Question</h3>
+
+                <div class="timer-circle" id="timerCircle">
+                    15
+                </div>
+
+            </div>
+
+            <div class="answer-list" id="answerList"></div>
+
+            <div class="quiz-bottom">
+
+                <span id="answerHint">
+                    Select your answer.
+                </span>
+
+                <button class="btn"
+                    id="nextBtn"
+                    disabled>
+                    Next Question →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RESULT MODAL -->
+
+    <div class="modal-backdrop hidden" id="resultModal">
+
+        <div class="result-modal">
+
+            <div class="result-icon">🏆</div>
+
+            <div class="eyebrow">CHALLENGE COMPLETE</div>
+
+            <h2 id="resultTitle">Excellent Work!</h2>
+
+            <p id="resultSubtitle"></p>
+
+            <div class="score-ring">
+                <strong id="scoreValue">0</strong>
+                <small>OUT OF 10</small>
+            </div>
+
+            <div class="result-stats">
+
+                <div>
+                    <strong id="correctValue">0</strong>
+                    <span>CORRECT</span>
+                </div>
+
+                <div>
+                    <strong id="wrongValue">0</strong>
+                    <span>INCORRECT</span>
+                </div>
+
+                <div>
+                    <strong id="accuracyValue">0%</strong>
+                    <span>ACCURACY</span>
+                </div>
+
+            </div>
+
+            <p id="resultMessage"></p>
+
+            <div class="result-actions">
+
+                <button class="btn" id="playAgainBtn">
+                    Play Again ↻
+                </button>
+
+                <button class="btn secondary" id="reviewBtn">
+                    Review Answers
+                </button>
+
+                <button class="btn secondary" id="categoryAgainBtn">
+                    Change Category
+                </button>
+
+            </div>
+
+            <div class="review-list hidden" id="reviewList"></div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        QUIZVERSE © 2026
+        <br>
+        LEARN · PLAY · LEVEL UP
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
